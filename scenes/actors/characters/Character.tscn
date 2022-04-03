@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/actors/characters/Character.gd" type="Script" id=1]
+
+[sub_resource type="CylinderShape" id=1]
+
+[sub_resource type="AnimationNodeBlendTree" id=2]
+graph_offset = Vector2( -174, 82 )
+
+[node name="Character" type="RigidBody"]
+mode = 2
+custom_integrator = true
+script = ExtResource( 1 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( -1, -2.26267e-08, 8.44439e-08, 0, 0.965926, 0.258819, -8.74228e-08, 0.258819, -0.965926, 0, 2.35, -2.25 )
+
+[node name="BodyShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 2 )
+anim_player = NodePath("../AnimationPlayer")

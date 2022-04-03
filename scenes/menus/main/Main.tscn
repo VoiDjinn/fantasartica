@@ -1,0 +1,70 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/menus/main/Main.gd" type="Script" id=1]
+
+[node name="MainMenu" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 32
+custom_constants/margin_top = 32
+custom_constants/margin_left = 32
+custom_constants/margin_bottom = 32
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Center" type="VBoxContainer" parent="."]
+margin_left = 32.0
+margin_top = 32.0
+margin_right = 992.0
+margin_bottom = 568.0
+
+[node name="Title" type="Label" parent="Center"]
+margin_right = 960.0
+margin_bottom = 266.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "FANTASARTICA"
+align = 1
+valign = 1
+
+[node name="Options" type="VBoxContainer" parent="Center"]
+margin_left = 448.0
+margin_top = 270.0
+margin_right = 511.0
+margin_bottom = 536.0
+size_flags_horizontal = 6
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Start" type="Button" parent="Center/Options"]
+margin_top = 87.0
+margin_right = 63.0
+margin_bottom = 107.0
+size_flags_horizontal = 5
+text = "Start"
+
+[node name="Options" type="Button" parent="Center/Options"]
+margin_top = 111.0
+margin_right = 63.0
+margin_bottom = 131.0
+size_flags_horizontal = 5
+text = "Options"
+
+[node name="Credits" type="Button" parent="Center/Options"]
+margin_top = 135.0
+margin_right = 63.0
+margin_bottom = 155.0
+size_flags_horizontal = 5
+text = "Credits"
+
+[node name="Exit" type="Button" parent="Center/Options"]
+margin_top = 159.0
+margin_right = 63.0
+margin_bottom = 179.0
+size_flags_horizontal = 5
+text = "Exit"
+
+[connection signal="pressed" from="Center/Options/Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="Center/Options/Exit" to="." method="_on_Exit_pressed"]

@@ -1,0 +1,50 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "RigidBody",
+"class": "Character",
+"language": "GDScript",
+"path": "res://scenes/actors/characters/Character.gd"
+} ]
+_global_script_class_icons={
+"Character": ""
+}
+
+[application]
+
+config/name="Fantasartica"
+run/main_scene="res://Main.tscn"
+run/disable_stdout=true
+run/disable_stderr=true
+boot_splash/bg_color=Color( 0.137255, 0.137255, 0.137255, 1 )
+config/icon="res://icon.png"
+
+[debug]
+
+settings/stdout/verbose_stdout=true
+
+[display]
+
+window/vsync/use_vsync=false
+
+[editor]
+
+convert_text_resources_to_binary_on_export=true
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+threads/thread_model=2
+environment/default_clear_color=Color( 0.137255, 0.137255, 0.137255, 1 )
+environment/default_environment="res://default_env.tres"
